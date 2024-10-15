@@ -50,6 +50,7 @@ LinkedList::~LinkedList()
         //need to delete before reassignment of remove.
         //otherwise delete wrong node.
         //are we deleting address or actual node???
+        //we are deleting the actual node, and then need to allocate head to NULL to avoid ptr getting lost in porgram.
     } //close while loop.
     std::cout << "destructor called" << std::endl;
     head = NULL; //not having this line was breaking my program.
@@ -96,6 +97,9 @@ const LinkedList& LinkedList::operator=(const LinkedList& rhs)
         } //close nested else.
     } //close outer else.
     return *this; //still dont understand this line???
+    //dereferencing the this pointer to corresponding object.
+    //dereferencing object being pointed to. 
+    //check slides 3 in cs2 folders.
 } //close assignment function.
 
 //LinkedList insertToFront() function:
@@ -197,13 +201,14 @@ void LinkedList::append(const LinkedList &other)
             //when do we use -> versus . operator???
         {
             return; //bc appending empty to empty.
-            //returning nothing???
+            //returning nothing.
         }
         else //other list is NOT empty:
         {
             //create a deep copy of list being appended.
             LinkedList deepCopyOther(other);
-            //calling copy constructor???
+            //calling copy constructor locally. 
+            //not locally would be via main function.
             
             head = deepCopyOther.head;
             deepCopyOther.head = NULL;

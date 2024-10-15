@@ -52,9 +52,9 @@ LinkedList::~LinkedList()
         //are we deleting address or actual node???
     } //close while loop.
     std::cout << "destructor called" << std::endl;
-    head = NULL; 
-    //not having this line was breaking my program.
+    head = NULL; //not having this line was breaking my program.
     //had to assign head to NULL after deleting Linked List.
+    //cant have head pointing to nothing / lost in program.
 } //close destructor.
 
 //LinkedList assignment operator:
@@ -170,7 +170,7 @@ void LinkedList::reverseList()
         current = nexT;
     }
     head = previous;
-}
+} //close reverseList() function.
 
 //LinkedList printReverse() function:
 void LinkedList::printReverse() const //read-only
@@ -183,19 +183,20 @@ void LinkedList::printReverse() const //read-only
     get(i, x); //ListSeven.get(1, x);
     std::cout << x;
     }
-}
+} //close printReverse() function.
 
 //LinkedList append() function:
 void LinkedList::append(const LinkedList &other)
 {
     Node* current = head;
-//*need to create deep copy of list(s)
-//so far creating shallow ones.
+    //*need to create deep copy of list(s)
+    //so far creating shallow ones.
     if(head == NULL) //current list is EMPTY:
     {
         if(other.head == NULL) //other list IS empty:
         {
             return; //bc appending empty to empty.
+            //returning nothing???
         }
         else //other list is NOT empty:
         {
@@ -241,7 +242,7 @@ void LinkedList::swap(LinkedList &other)
     head = other.head;
     other.head = n;
     n = NULL;
-}
+} //close swap() function.
 
 //LinkedList size() function:
 int LinkedList::size() const
@@ -254,5 +255,5 @@ int LinkedList::size() const
         current = current->next;
     }
     return counter;
-}
+} //close size() function.
 

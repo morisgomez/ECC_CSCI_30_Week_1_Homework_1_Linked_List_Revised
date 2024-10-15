@@ -13,7 +13,7 @@ public:
 
 class LinkedList
 {
-public:
+private:
     Node *head; //points to the head of List.
 public:
 //constructor:

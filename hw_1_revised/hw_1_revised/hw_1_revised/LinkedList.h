@@ -20,7 +20,7 @@ public:
     LinkedList();
 //copy constructor:
     LinkedList(const LinkedList& rhs);
-//destructor function:!!!!!!!!!!!NO PASSING.
+//destructor:
     ~LinkedList();
 //assigment operator function:
     const LinkedList& operator=(const LinkedList& rhs);

@@ -194,6 +194,7 @@ void LinkedList::append(const LinkedList &other)
     if(head == NULL) //current list is EMPTY:
     {
         if(other.head == NULL) //other list IS empty:
+            //when do we use -> versus . operator???
         {
             return; //bc appending empty to empty.
             //returning nothing???
